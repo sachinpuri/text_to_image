@@ -164,7 +164,9 @@ class TextToImage {
             }
             
             imagettftext($this->image, $this->fontSize, $this->angle, $startXPosition, $this->startYPosition, $this->fontColorAllocated, $this->fontFile, $line);
-            $this->underline($startXPosition, $lineWidth);
+            if(strlen($line)>0){
+                $this->underline($startXPosition, $lineWidth);
+            }
             $this->startYPosition+=$this->lineHeight;
             $lineNumber++;
         }
